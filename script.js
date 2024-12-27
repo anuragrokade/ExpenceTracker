@@ -4,7 +4,6 @@ const totalAmount = document.getElementById("total-amount");
 
 let expenses = {}; // To store expenses grouped by date
 
-// Add expense on form submission
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -28,7 +27,6 @@ form.addEventListener("submit", (e) => {
     form.reset();
 });
 
-// Update expense list grouped by date
 function updateExpenseList() {
     expenseList.innerHTML = "";
 
@@ -55,7 +53,6 @@ function updateExpenseList() {
     });
 }
 
-// Update the total expense
 function updateTotal() {
     let total = 0;
     Object.values(expenses).forEach((expenseArray) => {
@@ -64,7 +61,6 @@ function updateTotal() {
     totalAmount.textContent = `₹${total.toFixed(2)}`;
 }
 
-// Delete an expense
 function deleteExpense(date, index) {
     expenses[date].splice(index, 1);
     if (expenses[date].length === 0) {
